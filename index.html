@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hyunjeong (Lacy) Rhee | Fashion Informatics & NLP</title>
+  <meta name="description" content="PhD Candidate in Textile and Apparel Management at University of Missouri. Research in fashion informatics, NLP, and LLMs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & base ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --text:       #1a1a1a;
+      --muted:      #555;
+      --subtle:     #888;
+      --border:     #ddd;
+      --bg:         #fff;
+      --bg-alt:     #f7f7f5;
+      --accent:     #2a4a8a;
+      --accent-lt:  #e8edf7;
+      --award:      #8a4a00;
+      --award-bg:   #fff8ec;
+      --font-serif: 'EB Garamond', Georgia, serif;
+      --font-sans:  'Inter', system-ui, sans-serif;
+      --max:        900px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+
+    /* ── Nav ──────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .inner {
+      max-width: var(--max); margin: 0 auto; padding: 0 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 52px;
+    }
+    nav .brand { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--text); }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { font-size: 0.85rem; font-weight: 500; color: var(--muted); letter-spacing: 0.02em; }
+    nav ul a:hover { color: var(--accent); text-decoration: none; }
+
+    /* ── Hero ─────────────────────────────────────────── */
+    #about {
+      padding: 64px 0 52px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero { display: flex; gap: 48px; align-items: flex-start; }
+    .hero-photo {
+      flex-shrink: 0;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: var(--bg-alt);
+      border: 3px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-photo .initials {
+      font-family: var(--font-serif); font-size: 2.4rem; color: var(--accent);
+    }
+    .hero-text h1 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem; font-weight: 600;
+      line-height: 1.2; margin-bottom: 6px;
+    }
+    .hero-text .position {
+      font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; line-height: 1.5;
+    }
+    .hero-text .bio { font-size: 0.93rem; color: var(--text); max-width: 600px; margin-bottom: 20px; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-links a {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.82rem; font-weight: 500;
+      padding: 5px 12px; border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--muted); background: var(--bg);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .hero-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .hero-links a svg { width: 14px; height: 14px; }
+
+    /* ── Section headings ─────────────────────────────── */
+    section { padding: 52px 0; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.55rem; font-weight: 600;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+    .section-title span {
+      display: block; width: 36px; height: 3px;
+      background: var(--accent); margin-top: 6px;
+    }
+
+    /* ── Research interests ───────────────────────────── */
+    .interests { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .tag {
+      font-size: 0.8rem; padding: 4px 12px; border-radius: 20px;
+      background: var(--accent-lt); color: var(--accent); font-weight: 500;
+    }
+
+    /* ── Publications ─────────────────────────────────── */
+    .pub-list { display: flex; flex-direction: column; gap: 20px; }
+    .pub-item {
+      padding: 16px 18px; border-radius: 6px;
+      border-left: 3px solid var(--border);
+      background: var(--bg-alt);
+      transition: border-color 0.15s;
+    }
+    .pub-item:hover { border-left-color: var(--accent); }
+    .pub-item .pub-title { font-size: 0.93rem; font-weight: 600; margin-bottom: 4px; }
+    .pub-item .pub-authors { font-size: 0.83rem; color: var(--muted); margin-bottom: 4px; }
+    .pub-item .pub-venue { font-size: 0.83rem; color: var(--muted); font-style: italic; }
+    .pub-item .pub-badge {
+      display: inline-block; margin-top: 6px;
+      font-size: 0.74rem; font-weight: 600; padding: 2px 9px; border-radius: 12px;
+    }
+    .badge-review  { background: #e8f4e8; color: #2a722a; }
+    .badge-prep    { background: #fff3e0; color: #b25000; }
+    .badge-pub     { background: var(--accent-lt); color: var(--accent); }
+    .badge-award   { background: var(--award-bg); color: var(--award); }
+    .pub-item .pub-doi { font-size: 0.78rem; margin-top: 4px; }
+    .subsection-label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--subtle);
+      margin: 28px 0 12px;
+    }
+    .subsection-label:first-child { margin-top: 0; }
+
+    /* ── Presentations ───────────────────────────────── */
+    .pres-list { display: flex; flex-direction: column; gap: 12px; }
+    .pres-item {
+      font-size: 0.87rem; padding: 12px 16px;
+      border-radius: 6px; background: var(--bg-alt);
+      border-left: 3px solid transparent;
+    }
+    .pres-item.award-pres { border-left-color: var(--award); background: var(--award-bg); }
+    .pres-item .pres-title { font-weight: 600; }
+    .pres-item .pres-meta  { color: var(--muted); font-size: 0.82rem; }
+    .award-line { font-size: 0.78rem; color: var(--award); font-weight: 600; margin-top: 3px; }
+
+    /* ── Awards grid ──────────────────────────────────── */
+    .awards-grid { display: flex; flex-direction: column; gap: 8px; }
+    .award-item {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 16px; padding: 10px 14px; border-radius: 6px; background: var(--bg-alt);
+      font-size: 0.87rem;
+    }
+    .award-item .award-name { flex: 1; font-weight: 500; }
+    .award-item .award-org  { font-size: 0.8rem; color: var(--muted); }
+    .award-item .award-year { font-size: 0.8rem; color: var(--subtle); white-space: nowrap; }
+    .award-item .award-amt  { font-size: 0.8rem; color: var(--accent); white-space: nowrap; font-weight: 600; }
+
+    /* ── Teaching ─────────────────────────────────────── */
+    .teaching-list { display: flex; flex-direction: column; gap: 10px; }
+    .teaching-item {
+      padding: 12px 16px; border-radius: 6px; background: var(--bg-alt);
+      font-size: 0.87rem;
+    }
+    .teaching-item .course-title { font-weight: 600; }
+    .teaching-item .course-meta  { color: var(--muted); font-size: 0.82rem; }
+
+    /* ── CV button ────────────────────────────────────── */
+    .cv-section { text-align: center; padding: 48px 0; }
+    .cv-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.9rem; font-weight: 600; padding: 12px 28px;
+      background: var(--accent); color: #fff; border-radius: 6px;
+      transition: opacity 0.15s;
+    }
+    .cv-btn:hover { opacity: 0.88; text-decoration: none; }
+
+    /* ── Contact ──────────────────────────────────────── */
+    #contact .contact-grid {
+      display: flex; flex-wrap: wrap; gap: 14px;
+    }
+    .contact-card {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 18px; border-radius: 6px;
+      border: 1px solid var(--border); background: var(--bg-alt);
+      font-size: 0.87rem; color: var(--text);
+      transition: border-color 0.15s;
+    }
+    .contact-card:hover { border-color: var(--accent); text-decoration: none; color: var(--accent); }
+    .contact-card svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
+
+    /* ── Footer ───────────────────────────────────────── */
+    footer {
+      background: var(--bg-alt); border-top: 1px solid var(--border);
+      text-align: center; padding: 24px;
+      font-size: 0.8rem; color: var(--subtle);
+    }
+
+    /* ── Responsive ───────────────────────────────────── */
+    @media (max-width: 640px) {
+      .hero { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+      .hero-links { justify-content: center; }
+      .hero-photo { width: 130px; height: 130px; }
+      nav ul { gap: 14px; }
+      nav ul li:nth-child(n+5) { display: none; }
+      .award-item { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ────────────────────────────────────── -->
+<nav>
+  <div class="inner">
+    <span class="brand">Hyunjeong (Lacy) Rhee</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#presentations">Presentations</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── About / Hero ──────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="hero">
+      <div class="hero-photo">
+        <!-- Replace with your photo: <img src="photo.jpg" alt="Hyunjeong Lacy Rhee" /> -->
+        <span class="initials">HLR</span>
+      </div>
+      <div class="hero-text">
+        <h1>Hyunjeong &ldquo;Lacy&rdquo; Rhee</h1>
+        <p class="position">
+          PhD Candidate &mdash; Textile and Apparel Management<br />
+          University of Missouri &bull; Advisor: Dr. Li Zhao<br />
+          <em>Graduate Certificate in Data Science (in progress)</em>
+        </p>
+        <p class="bio">
+          I am a PhD candidate in Textile and Apparel Management at the University of Missouri,
+          where I apply natural language processing and large language models to questions in
+          fashion consumer behavior and retail analytics. My dissertation examines
+          LLM-driven hyper-personalization and identity signaling among fashion consumers.
+          Before my doctoral studies, I spent three years in industry as a merchandiser at
+          CJ Olive Young, Sephora Korea, and Samsung C&amp;T Fashion Group, which grounds my
+          research in real-world retail practice. I am on the academic job market for
+          positions starting Fall 2027.
+        </p>
+        <div class="hero-links">
+          <a href="mailto:hrdb2@missouri.edu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            hrdb2@missouri.edu
+          </a>
+          <a href="https://scholar.google.com/citations?user=4LAPKtYAAAAJ" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            Google Scholar
+          </a>
+          <a href="https://www.linkedin.com/in/hjrhee/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+          <a href="CV_HJLacyRhee_2026.pdf" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Curriculum Vitae
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Research ────────────────────────────────────────── -->
+<section id="research">
+  <div class="container">
+    <h2 class="section-title">Research<span></span></h2>
+
+    <div class="interests" style="margin-bottom:32px;">
+      <span class="tag">Fashion Informatics</span>
+      <span class="tag">Natural Language Processing</span>
+      <span class="tag">Large Language Models</span>
+      <span class="tag">Consumer Behavior</span>
+      <span class="tag">Sentiment Analysis</span>
+      <span class="tag">Hyper-Personalization</span>
+      <span class="tag">AI in Retail</span>
+      <span class="tag">Computational Social Science</span>
+    </div>
+
+    <!-- Journal Publications -->
+    <div class="subsection-label">Peer-Reviewed Journal Publications</div>
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <div class="pub-title">Generative AI and Employee Creativity</div>
+        <div class="pub-authors"><strong>Rhee, H.</strong>, Youn, S., &amp; Lee, K.-H.</div>
+        <div class="pub-venue"><em>International Journal of Retail and Distribution Management</em></div>
+        <span class="pub-badge badge-prep">Preparing Manuscript &mdash; Submission July 2026</span>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">From Expectations to Experiences: Revisiting Sentiment Analysis Through Pre- and Post-Purchase Content in Fashion Product Reviews</div>
+        <div class="pub-authors"><strong>Rhee, H.</strong> &amp; Zhao, L.</div>
+        <div class="pub-venue"><em>Journal of Fashion Marketing and Management</em></div>
+        <span class="pub-badge badge-review">Under 1st Review</span>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">The Other Side of Green Beauty Consumption: The Effect of Eco-Friendly Claims on Appearance Enhancement Attributes for Makeup</div>
+        <div class="pub-authors"><strong>Rhee, H.</strong> &amp; Lee, K.-H.</div>
+        <div class="pub-venue"><em>Journal of the Korean Society of Clothing and Textiles</em>, 47(6), 1204&ndash;1220. (2023)</div>
+        <span class="pub-badge badge-pub">Published</span>
+        <div class="pub-doi"><a href="https://doi.org/10.5850/JKSCT.2023.47.6.1204" target="_blank" rel="noopener">https://doi.org/10.5850/JKSCT.2023.47.6.1204</a></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">The Resourcefulness of Sponsored Contents on Social Media: A Netnographic Approach to Customer Inspiration Cues</div>
+        <div class="pub-authors"><strong>Rhee, H.</strong> &amp; Lee, K.-H.</div>
+        <div class="pub-venue"><em>Journal of Fashion Business</em>, 26(6), 116&ndash;132. (2022) [KCI &mdash; KCI IF: 1.06]</div>
+        <span class="pub-badge badge-pub">Published</span>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Fashion in Live Commerce: A Transactional Communication Model-Based Approach</div>
+        <div class="pub-authors"><strong>Rhee, H.</strong>, Park, S. J., Jung, J., &amp; Lee, K.-H.</div>
+        <div class="pub-venue"><em>The Journal of Korean Living Science Research</em>, 38(1), 46&ndash;51. (2022)</div>
+        <span class="pub-badge badge-pub">Published</span>
+      </div>
+    </div>
+
+    <!-- Work in Progress -->
+    <div class="subsection-label" style="margin-top:32px;">Work in Progress</div>
+    <div class="pub-list">
+      <div class="pub-item">
+        <div class="pub-title">Fashion NFTs and Conspicuous Consumption</div>
+        <div class="pub-authors">Sun, X., <strong>Rhee, H.</strong>, &amp; Zhao, L.</div>
+        <span class="pub-badge badge-prep">Draft in Progress</span>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Bias in LLM-Generated Fashion Content</div>
+        <div class="pub-authors"><strong>Rhee, H.</strong> &amp; Zhao, L.</div>
+        <span class="pub-badge badge-prep">Data Collection</span>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">An Experimental Study of AI-Generated Fashion Model Imagery</div>
+        <div class="pub-authors"><strong>Rhee, H.</strong> &amp; Zhao, L.</div>
+        <span class="pub-badge badge-prep">Study 1 Completed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Presentations ──────────────────────────────────── -->
+<section id="presentations">
+  <div class="container">
+    <h2 class="section-title">Presentations<span></span></h2>
+
+    <div class="subsection-label">2026</div>
+    <div class="pres-list">
+      <div class="pres-item award-pres">
+        <div class="pres-title">When Do Fashion Reviews Fool AI? Insights from Misclassification in Sentiment Analysis</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong> &amp; Zhao, L. &mdash; ICCT 2026, Seoul, South Korea. May 23. [Poster]</div>
+        <div class="award-line">&#9733; 2026 ICCT Best Poster Presentation Award</div>
+      </div>
+      <div class="pres-item">
+        <div class="pres-title">Reading Between the Stars: Extracting Pre-Purchase Expectations from Fashion Product Reviews Using LLMs</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong> &amp; Zhao, L. &mdash; ITAA Annual Conference, Jacksonville, FL. [Accepted, Poster]</div>
+      </div>
+      <div class="pres-item">
+        <div class="pres-title">AI in Practice: Affordances, Constraints, and Governance Gaps in the Fashion Supply Chain</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong>, Sun, X., &amp; Zhao, L. &mdash; ITAA Annual Conference, Jacksonville, FL. [Accepted, Oral]</div>
+      </div>
+      <div class="pres-item">
+        <div class="pres-title">Revisiting the Personalization-Privacy Paradox: Exploring Gen Z&rsquo;s Consumer Perceptions of AI-Driven Fashion Marketing</div>
+        <div class="pres-meta">Hendershott, E., <strong>Rhee, H.</strong>, &amp; Zhao, L. &mdash; ITAA Annual Conference, Jacksonville, FL. [Accepted, Poster]</div>
+      </div>
+    </div>
+
+    <div class="subsection-label" style="margin-top:28px;">2025</div>
+    <div class="pres-list">
+      <div class="pres-item award-pres">
+        <div class="pres-title">Revisiting Fashion Product Reviews: AI-Driven Analysis of the Pre-Purchase vs. Post-Purchase Divide</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong> &amp; Zhao, L. &mdash; ITAA Annual Conference, St. Louis, MO. Nov 18&ndash;22. [Oral]</div>
+        <div class="award-line">&#9733; 2025 ITAA Paper of Distinction Award &mdash; Consumer Behavior Track</div>
+      </div>
+      <div class="pres-item">
+        <div class="pres-title">Fashion-Centric AI Integration: Navigating Challenges and Opportunities</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong> &amp; Zhao, L. &mdash; ITAA Annual Conference, St. Louis, MO. Nov 18&ndash;22. [Poster]</div>
+      </div>
+      <div class="pres-item">
+        <div class="pres-title">Ethics in the Loop: Fashion Industry Perspectives on the Ethical Challenges of AI</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong> &amp; Zhao, L. &mdash; ITAA Annual Conference, St. Louis, MO. Nov 18&ndash;22.</div>
+      </div>
+      <div class="pres-item">
+        <div class="pres-title">Leveraging Large Language Models for Consumer Behavior Analysis</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong> &mdash; 2025 SFTI-CMU International Conference, Chiang Mai University, Thailand. July 18&ndash;21. [Oral]</div>
+      </div>
+      <div class="pres-item">
+        <div class="pres-title">Generative AI in Retail: The Dual Effect of Capability and Regulation-Induced Uncertainty</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong>, Youn, S., &amp; Lee, K.-H. &mdash; AI Symposium, University of Missouri. January 17. [Poster]</div>
+      </div>
+    </div>
+
+    <div class="subsection-label" style="margin-top:28px;">2024</div>
+    <div class="pres-list">
+      <div class="pres-item">
+        <div class="pres-title">The Paradox of Generative AI Creativity: AI Capability and Regulation-Induced Uncertainty</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong>, Youn, S., &amp; Lee, K.-H. &mdash; ITAA Annual Conference, Long Beach, CA. Nov 8&ndash;11.</div>
+      </div>
+      <div class="pres-item">
+        <div class="pres-title">Tied Together as &ldquo;Swifties&rdquo;: Insights from Consumer Reviews of Fan-Made Fashion Merchandise</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong>, Youn, S., &amp; Lee, K.-H. &mdash; ITAA Annual Conference, Long Beach, CA. Nov 8&ndash;11.</div>
+      </div>
+      <div class="pres-item">
+        <div class="pres-title">Transparency Challenges in Textile and Apparel Sustainability: A Large Language Model Approach</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong>, Yun, S., Kim, T.-G., &amp; Lee, K.-H. &mdash; 77th Annual Meeting of the Textile Machinery Society of Japan, Osaka. May 30&ndash;31.</div>
+      </div>
+    </div>
+
+    <div class="subsection-label" style="margin-top:28px;">2023</div>
+    <div class="pres-list">
+      <div class="pres-item">
+        <div class="pres-title">Generative AI Disclosure in Fashion Marketing: A Tectonic Shift in the Advertising Landscape</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong> &amp; Lee, K.-H. &mdash; ITAA Annual Conference, Baltimore, MD. Nov 8&ndash;11.</div>
+      </div>
+      <div class="pres-item">
+        <div class="pres-title">Behind the Scenes of K-POP and the Luxury Industry: A Cross-Cultural Dynamic Topic Modeling Approach</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong> &amp; Lee, K.-H. &mdash; ITAA Annual Conference, Baltimore, MD. Nov 8&ndash;11.</div>
+      </div>
+      <div class="pres-item">
+        <div class="pres-title">What Going &ldquo;Green&rdquo; Costs for Cosmetics: The Effect of Sustainability Claims on Colored Makeup Products</div>
+        <div class="pres-meta"><strong>Rhee, H.</strong> &amp; Lee, K.-H. &mdash; ITAA Annual Conference, Baltimore, MD. Nov 8&ndash;11.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Awards & Funding ───────────────────────────────── -->
+<section id="awards">
+  <div class="container">
+    <h2 class="section-title">Awards &amp; Funding<span></span></h2>
+
+    <div class="subsection-label">Conference Awards</div>
+    <div class="awards-grid">
+      <div class="award-item">
+        <span class="award-name">Best Poster Presentation Award &mdash; <em>When Do Fashion Reviews Fool AI?</em></span>
+        <span class="award-org">ICCT, Seoul</span>
+        <span class="award-year">2026</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Paper of Distinction &mdash; Consumer Behavior Track &mdash; <em>Revisiting Fashion Product Reviews</em></span>
+        <span class="award-org">ITAA</span>
+        <span class="award-year">2025</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Excellent Poster Presentation Award</span>
+        <span class="award-org">Korean Society of Fashion and Textile Industry Spring Conference</span>
+        <span class="award-year">2023</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Excellent Poster Presentation Award</span>
+        <span class="award-org">Korean Society of Fashion and Textile Industry Fall Conference</span>
+        <span class="award-year">2022</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Outstanding Researcher Award (Conference Presentation, Master&rsquo;s Level)</span>
+        <span class="award-org">Hanyang University</span>
+        <span class="award-year">2024</span>
+      </div>
+    </div>
+
+    <div class="subsection-label" style="margin-top:28px;">Fellowships &amp; Scholarships</div>
+    <div class="awards-grid">
+      <div class="award-item">
+        <span class="award-name">Fisher Ames Rhymes Memorial Scholarship Fund, College of Arts &amp; Sciences</span>
+        <span class="award-org">University of Missouri</span>
+        <span class="award-year">2026&ndash;27</span>
+        <span class="award-amt">$1,500</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Richard W. Brookshire and Jung Ha-Brookshire Endowed Graduate Award in TAM</span>
+        <span class="award-org">University of Missouri</span>
+        <span class="award-year">2025&ndash;26</span>
+        <span class="award-amt">$1,000</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Marjorie Joseph Fellowship (Outstanding Beginning Doctoral Student Award)</span>
+        <span class="award-org">ITAA</span>
+        <span class="award-year">2025</span>
+        <span class="award-amt">$1,000</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Marion K. and Vernon W. Piper Distinguished Doctoral Fellowship</span>
+        <span class="award-org">University of Missouri</span>
+        <span class="award-year">2024&ndash;25</span>
+        <span class="award-amt">$7,000</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Hanyang University Scholarship for Study Abroad</span>
+        <span class="award-org">Hanyang University</span>
+        <span class="award-year">2024</span>
+        <span class="award-amt">$11,000</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Brain Korea 21 (BK21) Four Fellowship</span>
+        <span class="award-org">National Research Foundation Korea</span>
+        <span class="award-year">2022&ndash;24</span>
+        <span class="award-amt">≈ $6,500</span>
+      </div>
+    </div>
+
+    <div class="subsection-label" style="margin-top:28px;">Recognition</div>
+    <div class="awards-grid">
+      <div class="award-item">
+        <span class="award-name">Graduate Leadership &amp; Engagement Recognition Award</span>
+        <span class="award-org">University of Missouri Graduate School</span>
+        <span class="award-year">2025&ndash;26</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">Graduate Professional Council Conference Presentation Travel Award</span>
+        <span class="award-org">University of Missouri</span>
+        <span class="award-year">2024</span>
+      </div>
+      <div class="award-item">
+        <span class="award-name">BK21 Outstanding Graduate Student Award</span>
+        <span class="award-org">Hanyang University</span>
+        <span class="award-year">2022</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Teaching ───────────────────────────────────────── -->
+<section id="teaching">
+  <div class="container">
+    <h2 class="section-title">Teaching<span></span></h2>
+    <p style="font-size:0.9rem;color:var(--muted);margin-bottom:24px;">
+      Teaching interests: digital merchandising, data analytics, AI applications in fashion, and retail math.
+      Experienced in independently teaching large-enrollment online undergraduate courses (up to 200 students)
+      and leading advanced seminars on fashion data analytics.
+    </p>
+
+    <div class="subsection-label">Instructor of Record &mdash; University of Missouri</div>
+    <div class="teaching-list">
+      <div class="teaching-item">
+        <div class="course-title">TAM 4300 &mdash; Fashion Brand Management and Promotion</div>
+        <div class="course-meta">Fall 2026 &bull; Online &bull; 3 credits &bull; 80 students &bull; Primary instructor on record</div>
+      </div>
+      <div class="teaching-item">
+        <div class="course-title">TAM 2100 &mdash; Introduction to Digital Presentation Techniques</div>
+        <div class="course-meta">Spring 2026 &bull; Online &bull; 3 credits &bull; 200 students</div>
+      </div>
+      <div class="teaching-item">
+        <div class="course-title">TAM 2100 &mdash; Introduction to Digital Presentation Techniques</div>
+        <div class="course-meta">Spring 2025 &bull; Online &bull; 3 credits &bull; 180 students</div>
+      </div>
+      <div class="teaching-item">
+        <div class="course-title">TAM 2100 &mdash; Introduction to Digital Presentation Techniques</div>
+        <div class="course-meta">Fall 2024 &bull; Online &bull; 3 credits &bull; 150 students</div>
+      </div>
+    </div>
+
+    <div class="subsection-label" style="margin-top:24px;">Graduate Teaching Assistant &mdash; University of Missouri</div>
+    <div class="teaching-list">
+      <div class="teaching-item">
+        <div class="course-title">TAM 4600/7600 &mdash; Digital Merchandising</div>
+        <div class="course-meta">Spring 2026 &bull; Led in-person lectures and discussion sessions</div>
+      </div>
+      <div class="teaching-item">
+        <div class="course-title">TAM 4400/7400 &mdash; The Retail Consumer: Advanced Data Analytics</div>
+        <div class="course-meta">Spring 2026 &bull; Led in-person lectures on statistics and significance testing</div>
+      </div>
+      <div class="teaching-item">
+        <div class="course-title">TAM 4300/7300 &mdash; Fashion Brand Management and Promotion</div>
+        <div class="course-meta">Fall 2025</div>
+      </div>
+      <div class="teaching-item">
+        <div class="course-title">TAM 3300 &mdash; Retail Merchandising Analysis</div>
+        <div class="course-meta">Fall 2024 &bull; Led lectures; assisted with OTB/Markup/Gross Margin analysis</div>
+      </div>
+    </div>
+
+    <div class="subsection-label" style="margin-top:24px;">Graduate Teaching Assistant &mdash; Hanyang University</div>
+    <div class="teaching-list">
+      <div class="teaching-item">
+        <div class="course-title">C-T4031 &mdash; Data Mining Research in Fashion Consumption Culture (Capstone Design)</div>
+        <div class="course-meta">2023&ndash;2024 &bull; Advised senior undergraduates on NLP research methods</div>
+      </div>
+      <div class="teaching-item">
+        <div class="course-title">GEN9176 &mdash; Big Data Fashion Trend</div>
+        <div class="course-meta">2022&ndash;2023 &bull; Supervised undergraduate data collection</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CV Download ────────────────────────────────────── -->
+<section id="cv" style="padding:48px 0; border-bottom:1px solid var(--border);">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title" style="text-align:center;">Curriculum Vitae<span style="margin:6px auto 0;"></span></h2>
+    <p style="font-size:0.9rem;color:var(--muted);margin-bottom:24px;">
+      Full CV including complete publication list, teaching portfolio, and service record.
+    </p>
+    <a class="cv-btn" href="CV_HJLacyRhee_2026.pdf" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      Download CV (PDF)
+    </a>
+  </div>
+</section>
+
+<!-- ── Contact ────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact<span></span></h2>
+    <p style="font-size:0.9rem;color:var(--muted);margin-bottom:20px;">
+      I am on the academic job market. I welcome inquiries about faculty positions,
+      research collaborations, and speaking invitations.
+    </p>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:hrdb2@missouri.edu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        hrdb2@missouri.edu
+      </a>
+      <a class="contact-card" href="https://scholar.google.com/citations?user=4LAPKtYAAAAJ" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        Google Scholar
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/hjrhee/" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        LinkedIn
+      </a>
+      <span class="contact-card" style="cursor:default;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Columbia, MO &bull; University of Missouri
+      </span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    &copy; 2026 Hyunjeong (Lacy) Rhee &bull; PhD Candidate, University of Missouri
+  </div>
+</footer>
+
+</body>
+</html>
