@@ -1,1 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Research | Hyunjeong (Lacy) Rhee</title>
+  <meta name="description" content="Research portfolio of Hyunjeong (Lacy) Rhee." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a1a;
+      --muted: #555;
+      --subtle: #888;
+      --border: #ddd;
+      --bg: #fff;
+      --bg-alt: #f7f7f5;
+      --accent: #2a4a8a;
+      --accent-lt: #e8edf7;
+      --font-serif: 'EB Garamond', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --max: 900px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+
+    nav .brand {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav ul a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    nav ul a:hover,
+    nav ul a.active {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    nav ul a.active { font-weight: 600; }
+
+    /* PAGE HEADER */
+
+    .page-header {
+      padding: 52px 0 42px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    .section-title span {
+      display: block;
+      width: 36px;
+      height: 3px;
+      background: var(--accent);
+      margin-top: 6px;
+    }
+
+    .intro {
+      max-width: 720px;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .subheading {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    /* INTEREST TAGS */
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: var(--accent-lt);
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* RESEARCH STREAMS */
+
+    .stream-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .stream-card {
+      padding: 22px;
+      border-radius: 6px;
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+    }
+
+    .stream-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+      margin-bottom: 8px;
+    }
+
+    .stream-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* PUBLICATIONS */
+
+    .subsection-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin: 30px 0 12px;
+    }
+
+    .subsection-label:first-child { margin-top: 0; }
+
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .pub-item {
+      padding: 16px 18px;
+      border-radius: 6px;
+      border-left: 3px solid var(--border);
+      background: var(--bg-alt);
+    }
+
+    .pub-item:hover { border-left-color: var(--accent); }
+
+    .pub-title {
+      font-size: 0.93rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .pub-authors,
+    .pub-venue {
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    .pub-venue { font-style: italic; }
+
+    .badge {
+      display: inline-block;
+      margin-top: 7px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 12px;
+      background: var(--accent-lt);
+      color: var(--accent);
+    }
+
+    footer {
+      background: var(--bg-alt);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      color: var(--subtle);
+    }
+
+    @media (max-width: 640px) {
+      .stream-grid { grid-template-columns: 1fr; }
+      nav ul { gap: 12px; }
+      nav ul a { font-size: 0.76rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="index.html">Hyunjeong (Lacy) Rhee</a>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="industry.html">Industry</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="index.html#awards">Awards</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+
+    <h1 class="section-title">
+      Research
+      <span></span>
+    </h1>
+
+    <p class="intro">
+      My research examines how artificial intelligence and data-driven
+      technologies shape fashion consumers, professionals, and retail
+      decision-making. I combine consumer research with computational methods
+      to study emerging AI-mediated fashion experiences and to investigate how
+      computational tools can better address fashion-specific contexts.
+    </p>
+
+    <div class="interests">
+      <span class="tag">AI in Fashion</span>
+      <span class="tag">Consumer Behavior</span>
+      <span class="tag">Fashion Data Analytics</span>
+      <span class="tag">Natural Language Processing</span>
+      <span class="tag">Large Language Models</span>
+      <span class="tag">Hyper-Personalization</span>
+      <span class="tag">Computational Social Science</span>
+    </div>
+
+  </div>
+</header>
+
+<section>
+  <div class="container">
+
+    <h2 class="subheading">Research Program</h2>
+
+    <div class="stream-grid">
+
+      <div class="stream-card">
+        <h3>AI-Mediated Fashion Experiences</h3>
+        <p>
+          My core research examines how consumers and fashion professionals
+          respond to AI-mediated experiences. Current projects investigate
+          generative AI, hyper-personalized fashion marketing, AI-generated
+          imagery, and the implementation of AI across the fashion supply chain.
+        </p>
+      </div>
+
+      <div class="stream-card">
+        <h3>Fashion Data &amp; Computational Methods</h3>
+        <p>
+          A complementary stream of my research uses natural language
+          processing, large language models, and other computational approaches
+          to analyze fashion-specific data. I am particularly interested in
+          understanding where general-purpose computational tools succeed or
+          fail when applied to fashion consumer contexts.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <h2 class="subheading">Selected Research</h2>
+
+    <div class="subsection-label">Current Manuscripts</div>
+
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <div class="pub-title">
+          Between Affordance and Actualization: AI Affordances, Constraints,
+          and Governance in the Fashion Supply Chain
+        </div>
+        <div class="pub-authors">
+          <strong>Rhee, H.</strong>, Sun, X., &amp; Zhao, L.
+        </div>
+        <div class="pub-venue">Clothing and Textiles Research Journal</div>
+        <span class="badge">Under Review</span>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">
+          From Expectations to Experiences: Revisiting Sentiment Analysis
+          Through Pre- and Post-Purchase Content in Fashion Product Reviews
+        </div>
+        <div class="pub-authors">
+          <strong>Rhee, H.</strong> &amp; Zhao, L.
+        </div>
+        <div class="pub-venue">Journal of Fashion Marketing and Management</div>
+        <span class="badge">Revise &amp; Resubmit</span>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">
+          Uncertainty in Generative AI Regulations and Employee Creativity
+        </div>
+        <div class="pub-authors">
+          <strong>Rhee, H.</strong>, Youn, S., &amp; Lee, K.-H.
+        </div>
+        <div class="pub-venue">
+          Target: International Journal of Retail and Distribution Management
+        </div>
+        <span class="badge">Manuscript in Preparation</span>
+      </div>
+
+    </div>
+
+    <div class="subsection-label">Published Research</div>
+
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <div class="pub-title">
+          The Other Side of Green Beauty Consumption: The Effect of
+          Eco-Friendly Claims on Appearance Enhancement Attributes for Makeup
+        </div>
+        <div class="pub-authors">
+          <strong>Rhee, H.</strong> &amp; Lee, K.-H.
+        </div>
+        <div class="pub-venue">
+          Journal of the Korean Society of Clothing and Textiles, 47(6),
+          1204–1220 (2023)
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">
+          The Resourcefulness of Sponsored Contents on Social Media:
+          A Netnographic Approach to Customer Inspiration Cues
+        </div>
+        <div class="pub-authors">
+          <strong>Rhee, H.</strong> &amp; Lee, K.-H.
+        </div>
+        <div class="pub-venue">
+          Journal of Fashion Business, 26(6), 116–132 (2022)
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Hyunjeong (Lacy) Rhee &bull;
+  PhD Candidate, University of Missouri
+</footer>
+
+</body>
+</html>
