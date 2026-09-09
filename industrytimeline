@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Industry Experience | Hyunjeong (Lacy) Rhee</title>
+  <meta
+    name="description"
+    content="Industry experience of Hyunjeong (Lacy) Rhee in fashion and beauty merchandising."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+
+    /* ─────────────────────────────────────────────
+       RESET + VARIABLES
+    ───────────────────────────────────────────── */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --text: #1a1a1a;
+      --muted: #555;
+      --subtle: #888;
+      --border: #ddd;
+
+      --bg: #fff;
+      --bg-alt: #f7f7f5;
+
+      --accent: #2a4a8a;
+      --accent-lt: #e8edf7;
+
+      --font-serif: 'EB Garamond', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+
+      --max: 900px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+
+
+    /* ─────────────────────────────────────────────
+       NAVIGATION
+    ───────────────────────────────────────────── */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(8px);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      height: 52px;
+    }
+
+    nav .brand {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    nav ul {
+      list-style: none;
+
+      display: flex;
+      gap: 24px;
+    }
+
+    nav ul a {
+      font-size: 0.85rem;
+      font-weight: 500;
+
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    nav ul a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    nav ul a.active {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+
+
+    /* ─────────────────────────────────────────────
+       PAGE HEADER
+    ───────────────────────────────────────────── */
+
+    .page-header {
+      padding: 64px 0 48px;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header h1 {
+      font-family: var(--font-serif);
+
+      font-size: 2.2rem;
+      font-weight: 600;
+
+      line-height: 1.2;
+
+      margin-bottom: 10px;
+    }
+
+    .page-header .subtitle {
+      max-width: 680px;
+
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+
+
+    /* ─────────────────────────────────────────────
+       TIMELINE
+    ───────────────────────────────────────────── */
+
+    .timeline-section {
+      padding: 60px 0 72px;
+    }
+
+    .timeline {
+      position: relative;
+
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+
+    /*
+      Vertical dotted line
+    */
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+
+      left: 80px;
+      top: 80px;
+      bottom: 80px;
+
+      border-left: 2px dotted #b9b9b9;
+
+      z-index: 0;
+    }
+
+
+
+    /* Timeline row */
+
+    .timeline-item {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns: 160px 1fr;
+
+      gap: 34px;
+
+      align-items: start;
+
+      margin-bottom: 72px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+
+
+    /* ─────────────────────────────────────────────
+       IMAGE CIRCLE
+    ───────────────────────────────────────────── */
+
+    .timeline-image-wrap {
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+
+      z-index: 2;
+    }
+
+    .timeline-image {
+      width: 136px;
+      height: 136px;
+
+      border-radius: 50%;
+
+      overflow: hidden;
+
+      background: var(--bg-alt);
+
+      border: 5px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--border);
+
+      flex-shrink: 0;
+    }
+
+    .timeline-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+
+
+    /* ─────────────────────────────────────────────
+       TIMELINE TEXT
+    ───────────────────────────────────────────── */
+
+    .timeline-content {
+      padding-top: 8px;
+    }
+
+    .timeline-content h2 {
+      font-family: var(--font-serif);
+
+      font-size: 1.6rem;
+      font-weight: 600;
+
+      line-height: 1.2;
+
+      margin-bottom: 3px;
+    }
+
+    .timeline-date {
+      font-size: 0.82rem;
+
+      color: var(--subtle);
+
+      font-weight: 500;
+
+      letter-spacing: 0.02em;
+
+      margin-bottom: 15px;
+    }
+
+    .timeline-content p {
+      font-size: 0.92rem;
+
+      color: var(--text);
+
+      max-width: 580px;
+    }
+
+
+
+    /* Optional role label */
+
+    .role {
+      display: inline-block;
+
+      font-size: 0.75rem;
+      font-weight: 600;
+
+      color: var(--accent);
+
+      background: var(--accent-lt);
+
+      border-radius: 14px;
+
+      padding: 3px 10px;
+
+      margin-bottom: 10px;
+    }
+
+
+
+    /* ─────────────────────────────────────────────
+       BACK BUTTON
+    ───────────────────────────────────────────── */
+
+    .back-home {
+      margin-top: 58px;
+
+      text-align: center;
+    }
+
+    .back-home a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 20px;
+
+      padding: 7px 15px;
+
+      color: var(--muted);
+
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .back-home a:hover {
+      color: var(--accent);
+
+      border-color: var(--accent);
+
+      text-decoration: none;
+    }
+
+
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+
+    footer {
+      background: var(--bg-alt);
+
+      border-top: 1px solid var(--border);
+
+      text-align: center;
+
+      padding: 24px;
+
+      font-size: 0.8rem;
+
+      color: var(--subtle);
+    }
+
+
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────── */
+
+    @media (max-width: 640px) {
+
+      nav ul {
+        gap: 14px;
+      }
+
+      nav ul li:nth-child(n+5) {
+        display: none;
+      }
+
+
+      .page-header {
+        padding: 48px 0 38px;
+      }
+
+
+      .timeline::before {
+        left: 55px;
+
+        top: 55px;
+        bottom: 55px;
+      }
+
+
+      .timeline-item {
+        grid-template-columns: 110px 1fr;
+
+        gap: 20px;
+
+        margin-bottom: 55px;
+      }
+
+
+      .timeline-image {
+        width: 90px;
+        height: 90px;
+      }
+
+
+      .timeline-content {
+        padding-top: 0;
+      }
+
+
+      .timeline-content h2 {
+        font-size: 1.35rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+
+<body>
+
+
+<!-- ─────────────────────────────────────────────
+     NAVIGATION
+───────────────────────────────────────────── -->
+
+<nav>
+
+  <div class="inner">
+
+    <a class="brand" href="index.html">
+      Hyunjeong (Lacy) Rhee
+    </a>
+
+    <ul>
+
+      <li>
+        <a href="index.html#about">About</a>
+      </li>
+
+      <li>
+        <a href="index.html#research">Research</a>
+      </li>
+
+      <li>
+        <a href="industry.html" class="active">Industry</a>
+      </li>
+
+      <li>
+        <a href="index.html#teaching">Teaching</a>
+      </li>
+
+      <li>
+        <a href="index.html#awards">Awards</a>
+      </li>
+
+      <li>
+        <a href="index.html#contact">Contact</a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>
+
+
+
+<!-- ─────────────────────────────────────────────
+     PAGE HEADER
+───────────────────────────────────────────── -->
+
+<header class="page-header">
+
+  <div class="container">
+
+    <h1>Industry Experience</h1>
+
+    <p class="subtitle">
+      Before entering academia, I worked in fashion and beauty merchandising
+      across leading retail companies in South Korea. These experiences continue
+      to shape how I approach fashion merchandising research and teaching,
+      particularly at the intersection of retail practice, consumer behavior,
+      digital technologies, and data-driven decision-making.
+    </p>
+
+  </div>
+
+</header>
+
+
+
+<!-- ─────────────────────────────────────────────
+     TIMELINE
+───────────────────────────────────────────── -->
+
+<section class="timeline-section">
+
+  <div class="container">
+
+    <div class="timeline">
+
+
+
+      <!-- ═══════════════════════════════════════
+           CJ OLIVE YOUNG
+      ═══════════════════════════════════════ -->
+
+      <article class="timeline-item">
+
+        <div class="timeline-image-wrap">
+
+          <div class="timeline-image">
+
+            <!--
+              Replace oliveyoung.jpg with your actual image filename.
+            -->
+
+            <img
+              src="oliveyoung.jpg"
+              alt="CJ Olive Young"
+            />
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-content">
+
+          <h2>CJ Olive Young</h2>
+
+          <div class="timeline-date">
+            2020–2022
+          </div>
+
+          <span class="role">
+            Merchandising (MD) Specialist
+          </span>
+
+          <p>
+            I worked as a multi-channel merchandiser for the color cosmetics
+            category across more than 1,300 brick-and-mortar stores and the
+            company's online retail channel. My responsibilities included
+            product assortment, monthly multi-brand promotions, category
+            planograms and visual merchandising, and sales-performance analysis.
+            I also managed product assortment and communication strategy for
+            Olive Young's Vegan Beauty campaign.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ═══════════════════════════════════════
+           SEPHORA
+      ═══════════════════════════════════════ -->
+
+      <article class="timeline-item">
+
+        <div class="timeline-image-wrap">
+
+          <div class="timeline-image">
+
+            <!-- Replace with your photo -->
+
+            <img
+              src="sephora.jpg"
+              alt="Sephora Korea"
+            />
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-content">
+
+          <h2>Sephora Korea</h2>
+
+          <div class="timeline-date">
+            2019–2020
+          </div>
+
+          <span class="role">
+            Merchandising Assistant
+          </span>
+
+          <p>
+            I joined Sephora Korea during the retailer's early expansion into
+            the South Korean market. I supported product allocation for new
+            store openings, coordinated with Sephora Southeast Asia's regional
+            headquarters in Singapore, and communicated with global beauty
+            brands regarding exclusive product-launch timelines. I also
+            developed data-management guidelines for more than 9,000 SKUs to
+            improve the accuracy and consistency of sales analysis.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ═══════════════════════════════════════
+           SAMSUNG C&T
+      ═══════════════════════════════════════ -->
+
+      <article class="timeline-item">
+
+        <div class="timeline-image-wrap">
+
+          <div class="timeline-image">
+
+            <!-- Replace with your photo -->
+
+            <img
+              src="samsungct.jpg"
+              alt="Samsung C&T Fashion Group"
+            />
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-content">
+
+          <h2>Samsung C&amp;T Fashion Group</h2>
+
+          <div class="timeline-date">
+            2018–2019
+          </div>
+
+          <span class="role">
+            Buying Assistant
+          </span>
+
+          <p>
+            I supported seasonal buying and merchandising activities for
+            global menswear brand Suitsupply, including product assortment
+            selection and store allocation. I also assisted with the brand's
+            South Korean market development by providing Korean-English
+            interpretation for employee training, press interviews, and
+            flagship-store launch events.
+          </p>
+
+        </div>
+
+      </article>
+
+
+
+    </div>
+
+
+
+    <!-- Back to main site -->
+
+    <div class="back-home">
+
+      <a href="index.html">
+        ← Back to main profile
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ─────────────────────────────────────────────
+     FOOTER
+───────────────────────────────────────────── -->
+
+<footer>
+
+  <div class="container">
+
+    &copy; 2026 Hyunjeong (Lacy) Rhee
+    &bull;
+    PhD Candidate, University of Missouri
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
