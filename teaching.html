@@ -1,1 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Teaching | Hyunjeong (Lacy) Rhee</title>
+  <meta name="description" content="Teaching portfolio of Hyunjeong (Lacy) Rhee." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a1a;
+      --muted: #555;
+      --subtle: #888;
+      --border: #ddd;
+      --bg: #fff;
+      --bg-alt: #f7f7f5;
+      --accent: #2a4a8a;
+      --accent-lt: #e8edf7;
+      --font-serif: 'EB Garamond', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --max: 900px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+
+    nav .brand {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav ul a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    nav ul a:hover,
+    nav ul a.active {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    nav ul a.active { font-weight: 600; }
+
+    /* PAGE HEADER */
+
+    .page-header {
+      padding: 52px 0 42px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    .section-title span {
+      display: block;
+      width: 36px;
+      height: 3px;
+      background: var(--accent);
+      margin-top: 6px;
+    }
+
+    .intro {
+      max-width: 720px;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .subheading {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    /* PHILOSOPHY */
+
+    .philosophy {
+      max-width: 740px;
+      font-size: 0.92rem;
+    }
+
+    .philosophy p {
+      margin-bottom: 14px;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .principle {
+      padding: 18px;
+      border-radius: 6px;
+      background: var(--bg-alt);
+      border-top: 3px solid var(--accent);
+    }
+
+    .principle h3 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .principle p {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* COURSES */
+
+    .subsection-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin: 28px 0 12px;
+    }
+
+    .subsection-label:first-child { margin-top: 0; }
+
+    .teaching-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .teaching-item {
+      padding: 14px 16px;
+      border-radius: 6px;
+      background: var(--bg-alt);
+    }
+
+    .course-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .course-meta {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 2px;
+    }
+
+    /* TEACHING EXAMPLES */
+
+    .example {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .example:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .example h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .example p {
+      max-width: 730px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    footer {
+      background: var(--bg-alt);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      color: var(--subtle);
+    }
+
+    @media (max-width: 640px) {
+      .principles { grid-template-columns: 1fr; }
+      nav ul { gap: 12px; }
+      nav ul a { font-size: 0.76rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="inner">
+
+    <a class="brand" href="index.html">
+      Hyunjeong (Lacy) Rhee
+    </a>
+
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="industry.html">Industry</a></li>
+      <li><a href="teaching.html" class="active">Teaching</a></li>
+      <li><a href="index.html#awards">Awards</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+
+    <h1 class="section-title">
+      Teaching
+      <span></span>
+    </h1>
+
+    <p class="intro">
+      My teaching goal is to equip students to become critical yet compassionate
+      thinkers who can engage confidently with data and emerging technologies
+      while developing their own creativity and professional judgment.
+    </p>
+
+  </div>
+</header>
+
+<section>
+  <div class="container">
+
+    <h2 class="subheading">Teaching Philosophy</h2>
+
+    <div class="philosophy">
+
+      <p>
+        I believe students learn most meaningfully when they can use digital
+        tools and data to investigate questions that matter to them. My role as
+        an instructor is therefore not simply to teach software or analytical
+        techniques, but to create an environment in which students can develop
+        the confidence to apply those tools independently.
+      </p>
+
+      <p>
+        Drawing from my experience in both fashion industry practice and
+        academia, I emphasize the relationship between technical skills,
+        critical judgment, and real-world decision-making. As technologies
+        evolve, I want students to understand not only how to use a tool, but
+        also when it is useful, where it may fail, and how their own expertise
+        remains essential.
+      </p>
+
+    </div>
+
+    <div class="principles">
+
+      <div class="principle">
+        <h3>Digital Inclusivity</h3>
+        <p>
+          Designing learning resources that support students with different
+          levels of prior digital experience.
+        </p>
+      </div>
+
+      <div class="principle">
+        <h3>Critical Thinking</h3>
+        <p>
+          Encouraging students to question technological outputs rather than
+          treating digital tools as substitutes for professional judgment.
+        </p>
+      </div>
+
+      <div class="principle">
+        <h3>Applied Learning</h3>
+        <p>
+          Connecting analytical and merchandising concepts to students'
+          questions and real-world fashion industry problems.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <h2 class="subheading">Teaching Experience</h2>
+
+    <div class="subsection-label">
+      Instructor of Record · University of Missouri
+    </div>
+
+    <div class="teaching-list">
+
+      <div class="teaching-item">
+        <div class="course-title">
+          TAM 4300 — Fashion Brand Management and Promotion
+        </div>
+        <div class="course-meta">
+          Fall 2026 · Online · 3 credits · 80 students · Primary instructor
+        </div>
+      </div>
+
+      <div class="teaching-item">
+        <div class="course-title">
+          TAM 2100 — Introduction to Digital Presentation Techniques
+        </div>
+        <div class="course-meta">
+          Fall 2024–Spring 2026 · Online · Up to 200 students
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="subsection-label">
+      Graduate Teaching Assistant · University of Missouri
+    </div>
+
+    <div class="teaching-list">
+
+      <div class="teaching-item">
+        <div class="course-title">
+          TAM 4400/7400 — The Retail Consumer: Advanced Data Analytics
+        </div>
+        <div class="course-meta">
+          Spring 2026 · Led lectures on descriptive and inferential statistics,
+          variable types, and significance testing
+        </div>
+      </div>
+
+      <div class="teaching-item">
+        <div class="course-title">
+          TAM 4600/7600 — Digital Merchandising
+        </div>
+        <div class="course-meta">
+          Spring 2026 · Led in-person lectures and discussion activities
+        </div>
+      </div>
+
+      <div class="teaching-item">
+        <div class="course-title">
+          TAM 3300 — Retail Merchandising Analysis
+        </div>
+        <div class="course-meta">
+          Fall 2024 · Retail math and Excel-based OTB, markup, and gross-margin analysis
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <h2 class="subheading">Teaching in Practice</h2>
+
+    <div class="example">
+
+      <h3>Supporting Different Levels of Digital Literacy</h3>
+
+      <p>
+        While teaching TAM 2100 to large online classes of up to 200 students,
+        I observed that difficulties increased whenever students encountered a
+        new software environment. I responded by restructuring instructional
+        videos and developing additional troubleshooting resources so students
+        could independently navigate common barriers while learning Excel,
+        PowerPoint, and Adobe Illustrator.
+      </p>
+
+    </div>
+
+    <div class="example">
+
+      <h3>Teaching With — Not Around — Generative AI</h3>
+
+      <p>
+        In the Adobe Illustrator module, students first learned foundational
+        techniques such as anchor points and the pen tool before working with
+        generative AI capabilities. They then reflected on the differences
+        between their own work and AI-generated vectors, including the
+        limitations of generated outputs. This activity encouraged students to
+        view AI as something to evaluate critically rather than as a replacement
+        for foundational knowledge.
+      </p>
+
+    </div>
+
+    <div class="example">
+
+      <h3>Making Data Analytics Meaningful</h3>
+
+      <p>
+        In advanced fashion data analytics courses, I help students translate
+        statistical concepts into questions they can apply to consumer and
+        merchandising problems. Rather than treating statistical procedures as
+        isolated techniques, I emphasize how analytical decisions connect to
+        practical outcomes such as consumer segmentation, advertising, and
+        retail decision-making.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Hyunjeong (Lacy) Rhee
+  &bull;
+  PhD Candidate, University of Missouri
+</footer>
+
+</body>
+</html>
