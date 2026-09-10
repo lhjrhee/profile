@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Teaching | Hyunjeong (Lacy) Rhee</title>
-  <meta name="description" content="Teaching portfolio of Hyunjeong (Lacy) Rhee." />
+  <meta
+    name="description"
+    content="Teaching portfolio of Hyunjeong (Lacy) Rhee."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* =========================================================
+       BASE
+    ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --text: #1a1a1a;
@@ -24,12 +42,16 @@
       --bg-alt: #f7f7f5;
       --accent: #2a4a8a;
       --accent-lt: #e8edf7;
-      --font-serif: 'EB Garamond', Georgia, serif;
-      --font-sans: 'Inter', system-ui, sans-serif;
+
+      --font-serif: "EB Garamond", Georgia, serif;
+      --font-sans: "Inter", system-ui, sans-serif;
+
       --max: 900px;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: var(--font-sans);
@@ -39,8 +61,14 @@
       background: var(--bg);
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     .container {
       max-width: var(--max);
@@ -48,14 +76,20 @@
       padding: 0 28px;
     }
 
-    /* NAVIGATION */
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
 
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.94);
+
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
       border-bottom: 1px solid var(--border);
     }
 
@@ -63,9 +97,11 @@
       max-width: var(--max);
       margin: 0 auto;
       padding: 0 28px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       height: 52px;
     }
 
@@ -74,11 +110,19 @@
       font-size: 1.1rem;
       font-weight: 600;
       color: var(--text);
+      white-space: nowrap;
+    }
+
+    nav .brand:hover {
+      text-decoration: none;
+      color: var(--accent);
     }
 
     nav ul {
       list-style: none;
+
       display: flex;
+      align-items: center;
       gap: 24px;
     }
 
@@ -95,9 +139,14 @@
       text-decoration: none;
     }
 
-    nav ul a.active { font-weight: 600; }
+    nav ul a.active {
+      font-weight: 600;
+    }
 
-    /* PAGE HEADER */
+
+    /* =========================================================
+       PAGE HEADER
+    ========================================================= */
 
     .page-header {
       padding: 52px 0 42px;
@@ -126,6 +175,11 @@
       color: var(--muted);
     }
 
+
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
+
     section {
       padding: 48px 0;
       border-bottom: 1px solid var(--border);
@@ -138,7 +192,10 @@
       margin-bottom: 18px;
     }
 
-    /* PHILOSOPHY */
+
+    /* =========================================================
+       TEACHING PHILOSOPHY
+    ========================================================= */
 
     .philosophy {
       max-width: 740px;
@@ -166,6 +223,7 @@
     .principle h3 {
       font-family: var(--font-serif);
       font-size: 1.05rem;
+      line-height: 1.35;
       margin-bottom: 6px;
     }
 
@@ -174,7 +232,10 @@
       color: var(--muted);
     }
 
-    /* COURSES */
+
+    /* =========================================================
+       TEACHING EXPERIENCE
+    ========================================================= */
 
     .subsection-label {
       font-size: 0.75rem;
@@ -182,10 +243,13 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--subtle);
+
       margin: 28px 0 12px;
     }
 
-    .subsection-label:first-child { margin-top: 0; }
+    .subsection-label:first-child {
+      margin-top: 0;
+    }
 
     .teaching-list {
       display: flex;
@@ -210,427 +274,708 @@
       margin-top: 2px;
     }
 
-    /* TEACHING CERTIFICATION & PROFESSIONAL DEVELOPMENT */
 
-.pd-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+    /* =========================================================
+       TEACHING CERTIFICATION / PROFESSIONAL DEVELOPMENT
+    ========================================================= */
 
-.pd-item {
-  padding: 18px 20px;
-  border-radius: 6px;
-  background: var(--bg-alt);
-  border-left: 3px solid var(--accent);
-}
+    .pd-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
 
-.pd-item h3 {
-  font-family: var(--font-serif);
-  font-size: 1.08rem;
-  font-weight: 600;
-  line-height: 1.35;
-  margin-bottom: 4px;
-}
+    .pd-item {
+      padding: 18px 20px;
 
-.pd-meta {
-  font-size: 0.8rem;
-  color: var(--subtle);
-  margin-bottom: 8px;
-}
+      border-radius: 6px;
+      background: var(--bg-alt);
+      border-left: 3px solid var(--accent);
+    }
 
-.pd-description {
-  font-size: 0.84rem;
-  color: var(--muted);
-  max-width: 720px;
-}
+    .pd-item h3 {
+      font-family: var(--font-serif);
+      font-size: 1.08rem;
+      font-weight: 600;
+      line-height: 1.35;
 
-.pd-sessions {
-  list-style: none;
-  margin-top: 12px;
-  padding: 0;
-  max-width: 650px;
-}
+      margin-bottom: 4px;
+    }
 
-.pd-sessions li {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+    .pd-meta {
+      font-size: 0.8rem;
+      color: var(--subtle);
 
-  padding: 7px 0;
-  border-top: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
 
-  font-size: 0.8rem;
-  color: var(--text);
-}
+    .pd-description {
+      max-width: 720px;
 
-.pd-sessions li:last-child {
-  border-bottom: 1px solid var(--border);
-}
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
 
-.pd-date {
-  flex-shrink: 0;
-  color: var(--subtle);
-  font-size: 0.76rem;
-}
+    .pd-sessions {
+      list-style: none;
 
-.pd-badge {
-  display: inline-block;
-  margin-top: 12px;
+      max-width: 680px;
+      margin-top: 14px;
+      padding: 0;
+    }
 
-  padding: 3px 10px;
-  border-radius: 14px;
+    .pd-sessions li {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
 
-  background: var(--accent-lt);
-  color: var(--accent);
+      gap: 24px;
 
-  font-size: 0.72rem;
-  font-weight: 600;
-}
+      padding: 7px 0;
+      border-top: 1px solid var(--border);
+
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    .pd-sessions li:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pd-date {
+      flex-shrink: 0;
+
+      font-size: 0.76rem;
+      color: var(--subtle);
+      white-space: nowrap;
+    }
+
+    .pd-badge {
+      display: inline-block;
+
+      margin-top: 12px;
+      padding: 3px 10px;
+
+      border-radius: 14px;
+
+      background: var(--accent-lt);
+      color: var(--accent);
+
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      background: var(--bg-alt);
+
+      text-align: center;
+
+      padding: 24px;
+
+      font-size: 0.8rem;
+      color: var(--subtle);
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 760px) {
+
+      nav .inner {
+        height: auto;
+        min-height: 52px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+      }
+
+      nav ul {
+        width: 100%;
+        gap: 16px;
+
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      nav ul a {
+        font-size: 0.76rem;
+        white-space: nowrap;
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+      }
+
+      .pd-sessions li {
+        display: block;
+      }
+
+      .pd-date {
+        display: block;
+        margin-top: 2px;
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      nav .inner {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .page-header {
+        padding: 38px 0 34px;
+      }
+
+      section {
+        padding: 38px 0;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
 
-<nav>
-  <div class="inner">
 
-    <a class="brand" href="index.html">
-      Hyunjeong (Lacy) Rhee
-    </a>
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
 
-    <ul>
-      <li><a href="index.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="industry.html">Industry</a></li>
-      <li><a href="teaching.html" class="active">Teaching</a></li>
-      <li><a href="index.html#awards">Awards</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
+  <nav>
 
-  </div>
-</nav>
+    <div class="inner">
 
-<header class="page-header">
-  <div class="container">
+      <a class="brand" href="index.html">
+        Hyunjeong (Lacy) Rhee
+      </a>
 
-    <h1 class="section-title">
-      Teaching
-      <span></span>
-    </h1>
+      <ul>
 
-    <p class="intro">
-      My teaching goal is to equip students to become critical yet compassionate
-      thinkers who can engage confidently with data and emerging technologies
-      while developing their own creativity and professional judgment.
-    </p>
+        <li>
+          <a href="index.html">
+            About
+          </a>
+        </li>
 
-  </div>
-</header>
+        <li>
+          <a href="research.html">
+            Research
+          </a>
+        </li>
 
-<section>
-  <div class="container">
+        <li>
+          <a href="industry.html">
+            Industry
+          </a>
+        </li>
 
-    <h2 class="subheading">Teaching Philosophy</h2>
+        <li>
+          <a href="teaching.html" class="active">
+            Teaching
+          </a>
+        </li>
 
-    <div class="philosophy">
+        <li>
+          <a href="index.html#awards">
+            Awards
+          </a>
+        </li>
 
-      <p>
-        I believe students learn most meaningfully when they can use digital
-        tools and data to investigate questions that matter to them. My role as
-        an instructor is therefore not simply to teach software or analytical
-        techniques, but to create an environment in which students can develop
-        the confidence to apply those tools independently.
+        <li>
+          <a href="index.html#contact">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =======================================================
+       PAGE HEADER
+  ======================================================== -->
+
+  <header class="page-header">
+
+    <div class="container">
+
+      <h1 class="section-title">
+        Teaching
+        <span></span>
+      </h1>
+
+      <p class="intro">
+        My teaching goal is to equip students to become critical yet
+        compassionate thinkers who can engage confidently with data and
+        emerging technologies while developing their own creativity and
+        professional judgment.
       </p>
 
-      <p>
-        Drawing from my experience in both fashion industry practice and
-        academia, I emphasize the relationship between technology,
-        critical judgment, and real-world decision-making. As technologies
-        evolve, I want students to understand not only how to use a tool, but
-        also when it is useful, where it may fail, and how their own individuality 
-        remains essential.
-      </p>
-
     </div>
 
-    <div class="principles">
+  </header>
 
-      <div class="principle">
-        <h3>Individuality</h3>
+
+  <!-- =======================================================
+       TEACHING PHILOSOPHY
+  ======================================================== -->
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="subheading">
+        Teaching Philosophy
+      </h2>
+
+      <div class="philosophy">
+
         <p>
-          My goal is to facilitate learning experiences that nurture student individuality.
-          This includes providing learning resources for levels of digital literacy, learning environments (online, in-person), so that students can
-          use tools fluidly,
-          adapting their learning experiences and preserving their own creativity.
+          I believe students learn most meaningfully when they can use digital
+          tools and data to investigate questions that matter to them. My role
+          as an instructor is therefore not simply to teach software or
+          analytical techniques, but to create an environment in which students
+          can develop the confidence to apply those tools independently.
         </p>
-      </div>
 
-      <div class="principle">
-        <h3>Critical and Independent Thinking</h3>
         <p>
-          Encouraging students to question technological outputs rather than
-          treating digital tools as substitutes for professional judgment, in connection to real-world fashion merchandising decisions.
-        </p>
-      </div>
-
-      <div class="principle">
-        <h3>Collaborative Mindset</h3>
-        <p>
-          By approaching fashion merchandising, omni-channel retail, and retail data analytics as a part of a broader supply chain,
-          I facilitate a collaborative mindset that prepares students for the operational reality of the fashion industry. 
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <div class="container">
-
-    <h2 class="subheading">Teaching Experience</h2>
-
-    <div class="subsection-label">
-      Instructor of Record · University of Missouri
-    </div>
-
-    <div class="teaching-list">
-
-      <div class="teaching-item">
-        <div class="course-title">
-          TAM 4300 — Fashion Brand Management and Promotion
-        </div>
-        <div class="course-meta">
-          Fall 2026 · Online · 3 credits · 80 students · Primary instructor
-        </div>
-      </div>
-
-      <div class="teaching-item">
-        <div class="course-title">
-          TAM 2100 — Introduction to Digital Presentation Techniques
-        </div>
-        <div class="course-meta">
-          Spring 2026 · Online · Up to 200 students
-        </div>
-      </div>
-      
-      
-      <div class="teaching-item">
-        <div class="course-title">
-          TAM 2100 — Introduction to Digital Presentation Techniques
-        </div>
-        <div class="course-meta">
-          Fall 2025 · Online · 00 students
-        </div>
-      </div>
-
-      
-      <div class="teaching-item">
-        <div class="course-title">
-          TAM 2100 — Introduction to Digital Presentation Techniques
-        </div>
-        <div class="course-meta">
-          Spring 2025 · Online · 200 students
-        </div>
-      </div>
-
-       <div class="teaching-item">
-        <div class="course-title">
-          TAM 2100 — Introduction to Digital Presentation Techniques
-        </div>
-        <div class="course-meta">
-          Fall 2024 · Online · 180 students
-        </div>
-      </div>
-      
-    </div>
-
-
-    <div class="subsection-label">
-      Graduate Teaching Assistant · University of Missouri
-    </div>
-
-    <div class="teaching-list">
-
-      <div class="teaching-item">
-        <div class="course-title">
-          TAM 4400/7400 — The Retail Consumer: Advanced Data Analytics
-        </div>
-        <div class="course-meta">
-          Spring 2026 · Led lectures on descriptive and inferential statistics,
-          variable types, and significance testing
-        </div>
-      </div>
-
-      <div class="teaching-item">
-        <div class="course-title">
-          TAM 4600/7600 — Digital Merchandising
-        </div>
-        <div class="course-meta">
-          Spring 2026 · Led in-person lectures and discussion activities
-        </div>
-      </div>
-
-
-
-      <div class="teaching-item">
-        <div class="course-title">
-          TAM 1200 — Basic Concepts of Apparel Design and Production
-        </div>
-        <div class="course-meta">
-          Fall 2025 · Led lectures on quality control and branding
-        </div>
-      </div>
-
-      <div class="teaching-item">
-        <div class="course-title">
-          TAM 3480 — Apparel Technical Design
-        </div>
-        <div class="course-meta">
-          Fall 2025 · Grading, project feedback, assistance with CLO 3D software
-        </div>
-      </div>
-
-      <div class="teaching-item">
-        <div class="course-title">
-          TAM 4300 — Fashion Branding
-        </div>
-        <div class="course-meta">
-          Fall 2025 · Grading and project feedback
-        </div>
-      </div>
-
-      <div class="teaching-item">
-        <div class="course-title">
-          TAM 4600/7600 — Digital Merchandising
-        </div>
-        <div class="course-meta">
-          Spring 2025 · Grading and project feedback
-        </div>
-      </div>
-
-
-      <div class="teaching-item">
-        <div class="course-title">
-          TAM 3300 — Retail Merchandising Analysis
-        </div>
-        <div class="course-meta">
-          Fall 2024 · Retail math and Excel-based OTB, markup, and gross-margin analysis, 1 lecture
-        </div>
-      </div>
-      
-      
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <div class="container">
-
-    <h2 class="subheading">
-      Teaching Certification &amp; Professional Development
-    </h2>
-
-    <div class="pd-list">
-
-
-      <!-- EFFECTIVE TEACHING BADGE -->
-
-      <div class="pd-item">
-
-        <h3>Grad/Postdoc Effective Teaching Badge</h3>
-
-        <div class="pd-meta">
-          University of Missouri · 2026
-        </div>
-
-        <p class="pd-description">
-          Earned the Grad/Postdoc Effective Teaching Badge, an Alternative
-          Digital Credential, through completion of three teaching-development
-          sessions and corresponding reflection activities.
-        </p>
-
-        <ul class="pd-sessions">
-
-          <li>
-            <span>Introduction to Course Design</span>
-            <span class="pd-date">September 19, 2025</span>
-          </li>
-
-          <li>
-            <span>Introduction to Assessment and Feedback</span>
-            <span class="pd-date">October 17, 2025</span>
-          </li>
-
-          <li>
-            <span>Effective Organize Your Class Lectures and Presentations</span>
-            <span class="pd-date">September 10, 2026</span>
-          </li>
-
-        </ul>
-
-        <span class="pd-badge">
-          Alternative Digital Credential
-        </span>
-
-      </div>
-
-
-      <!-- WRITING INTENSIVE WORKSHOP -->
-
-      <div class="pd-item">
-
-        <h3>Teaching Assistant Writing Intensive Workshop</h3>
-
-        <div class="pd-meta">
-          University of Missouri Teaching for Learning Center · August 2026
-        </div>
-
-        <p class="pd-description">
-          Professional development focused on supporting student writing,
-          providing effective feedback, and facilitating learning in
-          writing-intensive courses.
+          Drawing from my experience in both fashion industry practice and
+          academia, I emphasize the relationship between technology, critical
+          judgment, and real-world decision-making. As technologies evolve, I
+          want students to understand not only how to use a tool, but also when
+          it is useful, where it may fail, and how their own individuality
+          remains essential.
         </p>
 
       </div>
 
 
-      <!-- ONLINE TEACHING CERTIFICATION -->
+      <div class="principles">
 
-      <div class="pd-item">
 
-        <h3>Online Teaching Certification Seminar (OTCS)</h3>
+        <!-- INDIVIDUALITY -->
 
-        <div class="pd-meta">
-          University of Missouri · August 2024
+        <div class="principle">
+
+          <h3>
+            Individuality
+          </h3>
+
+          <p>
+            My goal is to facilitate learning experiences that nurture student
+            individuality. I provide resources that accommodate different
+            levels of digital literacy and different learning environments,
+            helping students use tools fluidly while preserving their own
+            creativity.
+          </p>
+
         </div>
 
-        <p class="pd-description">
-          Completed training in effective online course design and instruction,
-          supporting my teaching of large-enrollment undergraduate courses in
-          an online learning environment.
-        </p>
 
-        <span class="pd-badge">
-          Teaching Certification
-        </span>
+        <!-- CRITICAL THINKING -->
+
+        <div class="principle">
+
+          <h3>
+            Critical and Independent Thinking
+          </h3>
+
+          <p>
+            I encourage students to question technological outputs rather than
+            treating digital tools as substitutes for professional judgment,
+            connecting their evaluations to real-world fashion merchandising
+            decisions.
+          </p>
+
+        </div>
+
+
+        <!-- COLLABORATION -->
+
+        <div class="principle">
+
+          <h3>
+            Collaborative Mindset
+          </h3>
+
+          <p>
+            By approaching fashion merchandising, omni-channel retail, and
+            retail data analytics as parts of a broader supply chain, I
+            facilitate a collaborative mindset that prepares students for the
+            operational reality of the fashion industry.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       TEACHING EXPERIENCE
+  ======================================================== -->
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="subheading">
+        Teaching Experience
+      </h2>
+
+
+      <!-- INSTRUCTOR OF RECORD -->
+
+      <div class="subsection-label">
+        Instructor of Record · University of Missouri
+      </div>
+
+      <div class="teaching-list">
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 4300 — Fashion Brand Management and Promotion
+          </div>
+
+          <div class="course-meta">
+            Fall 2026 · Online · 3 credits · 80 students · Primary instructor
+          </div>
+
+        </div>
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 2100 — Introduction to Digital Presentation Techniques
+          </div>
+
+          <div class="course-meta">
+            Spring 2026 · Online · Up to 200 students
+          </div>
+
+        </div>
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 2100 — Introduction to Digital Presentation Techniques
+          </div>
+
+          <div class="course-meta">
+            Fall 2025 · Online
+          </div>
+
+        </div>
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 2100 — Introduction to Digital Presentation Techniques
+          </div>
+
+          <div class="course-meta">
+            Spring 2025 · Online · 200 students
+          </div>
+
+        </div>
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 2100 — Introduction to Digital Presentation Techniques
+          </div>
+
+          <div class="course-meta">
+            Fall 2024 · Online · 180 students
+          </div>
+
+        </div>
+
 
       </div>
 
 
+      <!-- GRADUATE TEACHING ASSISTANT -->
+
+      <div class="subsection-label">
+        Graduate Teaching Assistant · University of Missouri
+      </div>
+
+      <div class="teaching-list">
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 4400/7400 — The Retail Consumer: Advanced Data Analytics
+          </div>
+
+          <div class="course-meta">
+            Spring 2026 · Led lectures on descriptive and inferential
+            statistics, variable types, and significance testing
+          </div>
+
+        </div>
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 4600/7600 — Digital Merchandising
+          </div>
+
+          <div class="course-meta">
+            Spring 2026 · Led in-person lectures and discussion activities
+          </div>
+
+        </div>
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 1200 — Basic Concepts of Apparel Design and Production
+          </div>
+
+          <div class="course-meta">
+            Fall 2025 · Led lectures on quality control and branding
+          </div>
+
+        </div>
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 3480 — Apparel Technical Design
+          </div>
+
+          <div class="course-meta">
+            Fall 2025 · Grading, project feedback, assistance with CLO 3D
+            software
+          </div>
+
+        </div>
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 4300 — Fashion Branding
+          </div>
+
+          <div class="course-meta">
+            Fall 2025 · Grading and project feedback
+          </div>
+
+        </div>
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 4600/7600 — Digital Merchandising
+          </div>
+
+          <div class="course-meta">
+            Spring 2025 · Grading and project feedback
+          </div>
+
+        </div>
+
+
+        <div class="teaching-item">
+
+          <div class="course-title">
+            TAM 3300 — Retail Merchandising Analysis
+          </div>
+
+          <div class="course-meta">
+            Fall 2024 · Retail math and Excel-based OTB, markup, and
+            gross-margin analysis · 1 lecture
+          </div>
+
+        </div>
+
+
+      </div>
+
     </div>
 
-  </div>
-</section>
+  </section>
 
-<footer>
-  &copy; 2026 Hyunjeong (Lacy) Rhee
-  &bull;
-  PhD Candidate, University of Missouri
-</footer>
+
+  <!-- =======================================================
+       TEACHING CERTIFICATION / PROFESSIONAL DEVELOPMENT
+  ======================================================== -->
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="subheading">
+        Teaching Certification / Professional Development
+      </h2>
+
+      <div class="pd-list">
+
+
+        <!-- GRAD/POSTDOC EFFECTIVE TEACHING BADGE -->
+
+        <div class="pd-item">
+
+          <h3>
+            Grad/Postdoc Effective Teaching Badge
+          </h3>
+
+          <div class="pd-meta">
+            University of Missouri · 2026
+          </div>
+
+          <p class="pd-description">
+            Earned the Grad/Postdoc Effective Teaching Badge, an Alternative
+            Digital Credential, through completion of three teaching
+            development sessions and their corresponding reflection activities.
+          </p>
+
+          <ul class="pd-sessions">
+
+            <li>
+              <span>
+                Introduction to Course Design
+              </span>
+
+              <span class="pd-date">
+                September 19, 2025
+              </span>
+            </li>
+
+            <li>
+              <span>
+                Introduction to Assessment and Feedback
+              </span>
+
+              <span class="pd-date">
+                October 17, 2025
+              </span>
+            </li>
+
+            <li>
+              <span>
+                Effective Organize Your Class Lectures and Presentations
+              </span>
+
+              <span class="pd-date">
+                September 10, 2026
+              </span>
+            </li>
+
+          </ul>
+
+          <span class="pd-badge">
+            Alternative Digital Credential
+          </span>
+
+        </div>
+
+
+        <!-- WRITING INTENSIVE WORKSHOP -->
+
+        <div class="pd-item">
+
+          <h3>
+            Teaching Assistant Writing Intensive Workshop
+          </h3>
+
+          <div class="pd-meta">
+            University of Missouri Teaching for Learning Center · August 2026
+          </div>
+
+          <p class="pd-description">
+            Professional development focused on supporting student writing,
+            providing effective feedback, and facilitating learning in
+            writing-intensive courses.
+          </p>
+
+        </div>
+
+
+        <!-- ONLINE TEACHING CERTIFICATION -->
+
+        <div class="pd-item">
+
+          <h3>
+            Online Teaching Certification Seminar (OTCS)
+          </h3>
+
+          <div class="pd-meta">
+            University of Missouri · August 2024
+          </div>
+
+          <p class="pd-description">
+            Completed training in effective online course design and
+            instruction, supporting my teaching of large-enrollment
+            undergraduate courses in an online learning environment.
+          </p>
+
+          <span class="pd-badge">
+            Teaching Certification
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+    &copy; 2026 Hyunjeong (Lacy) Rhee
+    &bull;
+    PhD Candidate, University of Missouri
+  </footer>
+
 
 </body>
+
 </html>
