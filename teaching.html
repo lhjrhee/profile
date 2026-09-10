@@ -210,43 +210,83 @@
       margin-top: 2px;
     }
 
-    /* TEACHING EXAMPLES */
+    /* TEACHING CERTIFICATION & PROFESSIONAL DEVELOPMENT */
 
-    .example {
-      padding: 22px 0;
-      border-bottom: 1px solid var(--border);
-    }
+.pd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-    .example:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+.pd-item {
+  padding: 18px 20px;
+  border-radius: 6px;
+  background: var(--bg-alt);
+  border-left: 3px solid var(--accent);
+}
 
-    .example h3 {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      margin-bottom: 8px;
-    }
+.pd-item h3 {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
 
-    .example p {
-      max-width: 730px;
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
+.pd-meta {
+  font-size: 0.8rem;
+  color: var(--subtle);
+  margin-bottom: 8px;
+}
 
-    footer {
-      background: var(--bg-alt);
-      text-align: center;
-      padding: 24px;
-      font-size: 0.8rem;
-      color: var(--subtle);
-    }
+.pd-description {
+  font-size: 0.84rem;
+  color: var(--muted);
+  max-width: 720px;
+}
 
-    @media (max-width: 640px) {
-      .principles { grid-template-columns: 1fr; }
-      nav ul { gap: 12px; }
-      nav ul a { font-size: 0.76rem; }
-    }
+.pd-sessions {
+  list-style: none;
+  margin-top: 12px;
+  padding: 0;
+  max-width: 650px;
+}
+
+.pd-sessions li {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 7px 0;
+  border-top: 1px solid var(--border);
+
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.pd-sessions li:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.pd-date {
+  flex-shrink: 0;
+  color: var(--subtle);
+  font-size: 0.76rem;
+}
+
+.pd-badge {
+  display: inline-block;
+  margin-top: 12px;
+
+  padding: 3px 10px;
+  border-radius: 14px;
+
+  background: var(--accent-lt);
+  color: var(--accent);
+
+  font-size: 0.72rem;
+  font-weight: 600;
+}
   </style>
 </head>
 
