@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <title>Teaching | Hyunjeong (Lacy) Rhee</title>
   <meta
@@ -54,11 +54,18 @@
     }
 
     body {
+      min-width: 320px;
       font-family: var(--font-sans);
       font-size: 15px;
       line-height: 1.7;
       color: var(--text);
       background: var(--bg);
+      overflow-wrap: anywhere;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     a {
@@ -141,6 +148,30 @@
 
     nav ul a.active {
       font-weight: 600;
+    }
+
+    .menu-toggle {
+      display: none;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .menu-toggle:hover,
+    .menu-toggle:focus-visible {
+      background: var(--bg-alt);
+    }
+
+    .menu-toggle svg {
+      width: 24px;
+      height: 24px;
     }
 
 
@@ -386,68 +417,149 @@
        MOBILE
     ========================================================= */
 
-    @media (max-width: 760px) {
-
-      nav .inner {
-        height: auto;
-        min-height: 52px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 7px;
-      }
-
-      nav ul {
-        width: 100%;
-        gap: 16px;
-
-        overflow-x: auto;
-        padding-bottom: 2px;
-      }
-
-      nav ul a {
-        font-size: 0.76rem;
-        white-space: nowrap;
-      }
-
-      .principles {
-        grid-template-columns: 1fr;
-      }
-
-      .pd-sessions li {
-        display: block;
-      }
-
-      .pd-date {
-        display: block;
-        margin-top: 2px;
-      }
-
-    }
-
-
-    @media (max-width: 480px) {
-
+    @media (max-width: 719px) {
       .container {
         padding-left: 20px;
         padding-right: 20px;
       }
 
       nav .inner {
-        padding-left: 20px;
-        padding-right: 20px;
+        position: relative;
+        height: auto;
+        min-height: 58px;
+        padding: 0 20px;
+        gap: 16px;
+      }
+
+      nav .brand {
+        font-size: 1.08rem;
+        line-height: 1.1;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        flex: 0 0 auto;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        padding: 10px 20px 16px;
+        background: rgba(255,255,255,.99);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 10px 24px rgba(0,0,0,.08);
+      }
+
+      nav ul.is-open {
+        display: block;
+      }
+
+      nav ul a {
+        display: block;
+        min-height: 44px;
+        padding: 10px 4px;
+        border-bottom: 1px solid #eee;
+        font-size: .92rem;
+        letter-spacing: .01em;
+      }
+
+      nav ul li:last-child a {
+        border-bottom: 0;
       }
 
       .page-header {
-        padding: 38px 0 34px;
+        padding: 40px 0 34px;
+      }
+
+      .page-header .section-title {
+        font-size: clamp(1.9rem, 9vw, 2.2rem);
+        margin-bottom: 18px;
+      }
+
+      .intro {
+        font-size: .9rem;
+        line-height: 1.65;
       }
 
       section {
-        padding: 38px 0;
+        padding: 40px 0;
       }
 
+      .subheading {
+        font-size: 1.3rem;
+      }
+
+      .philosophy {
+        font-size: .9rem;
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .principle {
+        padding: 16px;
+      }
+
+      .teaching-item {
+        padding: 14px;
+      }
+
+      .course-title {
+        line-height: 1.5;
+      }
+
+      .course-meta {
+        margin-top: 4px;
+        line-height: 1.55;
+      }
+
+      .pd-item {
+        padding: 16px;
+      }
+
+      .pd-item h3 {
+        font-size: 1.04rem;
+      }
+
+      .pd-sessions li {
+        display: block;
+        padding: 9px 0;
+        line-height: 1.5;
+      }
+
+      .pd-date {
+        display: block;
+        margin-top: 3px;
+      }
+    }
+
+    @media (max-width: 374px) {
+      .container,
+      nav .inner {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      nav ul {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
     }
 
   </style>
@@ -469,7 +581,19 @@
         Hyunjeong (Lacy) Rhee
       </a>
 
-      <ul>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-menu"
+        aria-label="Open navigation menu"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <ul id="primary-menu">
 
         <li>
           <a href="index.html">
@@ -484,13 +608,13 @@
         </li>
 
         <li>
-          <a href="industry.html">
+          <a href="industrytimeline.html">
             Industry
           </a>
         </li>
 
         <li>
-          <a href="teaching.html" class="active">
+          <a href="teaching.html" class="active" aria-current="page">
             Teaching
           </a>
         </li>
@@ -976,6 +1100,48 @@
     &bull;
     PhD Candidate, University of Missouri
   </footer>
+
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('#primary-menu');
+
+    function closeMenu() {
+      menu.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation menu');
+    }
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute(
+        'aria-label',
+        isOpen ? 'Close navigation menu' : 'Open navigation menu'
+      );
+    });
+
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', event => {
+      if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        closeMenu();
+        menuButton.focus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 720) closeMenu();
+    });
+  </script>
 
 
 </body>
