@@ -224,9 +224,10 @@
     }
 
 
-    .classroom-photo { margin: 28px 0 0; max-width: 720px; }
-    .classroom-photo img { display: block; width: 100%; height: auto; border-radius: 6px; }
-    .classroom-photo figcaption { margin-top: 8px; font-size: .78rem; color: var(--subtle); }
+    .philosophy-layout { display: grid; grid-template-columns: minmax(0, 1fr) 210px; align-items: center; gap: 42px; }
+    .classroom-photo { margin: 0; text-align: center; }
+    .classroom-photo img { display: block; width: 210px; height: 210px; object-fit: cover; object-position: center; border-radius: 50%; }
+    .classroom-photo figcaption { margin-top: 10px; font-size: .75rem; line-height: 1.45; color: var(--subtle); }
 
     /* =========================================================
        TEACHING PHILOSOPHY
@@ -500,6 +501,9 @@
         font-size: .9rem;
       }
 
+      .philosophy-layout { grid-template-columns: 1fr; gap: 20px; }
+      .classroom-photo { justify-self: center; max-width: 210px; }
+
       .principles {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -624,6 +628,12 @@
         </li>
 
         <li>
+          <a href="index.html#awards">
+            Awards
+          </a>
+        </li>
+
+        <li>
           <a href="index.html#contact">
             Contact
           </a>
@@ -650,10 +660,6 @@
       </h1>
 
       <p class="intro">I teach fashion merchandising through the decisions that connect creative ideas to consumers, operations, and the wider supply chain. Across online and in-person courses, I help students use data and emerging technologies while developing their own judgment and creative voice.</p>
-      <figure class="classroom-photo">
-        <img src="TAM%204000%20Guest%20Lecture%201.jpg" alt="Hyunjeong (Lacy) Rhee teaching students during a TAM 4000 guest lecture" loading="lazy" decoding="async" />
-        <figcaption>Guest lecture in TAM 4000: Digital Marketing Strategies in Fashion.</figcaption>
-      </figure>
 
     </div>
 
@@ -672,9 +678,15 @@
         Teaching Philosophy
       </h2>
 
-      <div class="philosophy">
-        <p>My teaching centers on student individuality. I want students to translate their creative ideas into informed decisions, explain the reasoning behind those decisions, and recognize how merchandising work connects people across the fashion supply chain.</p>
-        <p>I draw on my fashion and beauty merchandising experience to make classroom problems concrete. In analytics and digital tools courses, I help students with different levels of experience build confidence, evaluate the limits of a tool, and decide when their own professional judgment should guide the next step.</p>
+      <div class="philosophy-layout">
+        <div class="philosophy">
+          <p>My teaching centers on student individuality. I want students to translate their creative ideas into informed decisions, explain the reasoning behind those decisions, and recognize how merchandising work connects people across the fashion supply chain.</p>
+          <p>I draw on my fashion and beauty merchandising experience to make classroom problems concrete. In analytics and digital tools courses, I help students with different levels of experience build confidence, evaluate the limits of a tool, and decide when their own professional judgment should guide the next step.</p>
+        </div>
+        <figure class="classroom-photo">
+          <img src="TAM%204000%20Guest%20Lecture%201.jpg" alt="Hyunjeong (Lacy) Rhee teaching students during a TAM 4000 guest lecture" loading="lazy" decoding="async" />
+          <figcaption>Guest lecture in TAM 4000: Digital Marketing Strategies in Fashion.</figcaption>
+        </figure>
       </div>
 
       <div class="principles">
